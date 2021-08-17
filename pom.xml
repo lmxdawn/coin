@@ -5,22 +5,26 @@
     <groupId>com.coin</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <modules>
         <module>coin-gateway</module>
         <module>coin-user</module>
         <module>coin-wallet</module>
+        <module>dubbo-api</module>
     </modules>
     <name>coin</name>
     <description>虚拟币项目</description>
 
     <properties>
+        <!-- Project revision -->
+        <revision>0.0.1-SNAPSHOT</revision>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
-        <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <springfox-boot.version>3.0.0</springfox-boot.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
@@ -46,6 +50,12 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- 引入Swagger3依赖 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

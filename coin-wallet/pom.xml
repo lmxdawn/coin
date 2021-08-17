@@ -5,7 +5,7 @@
     <parent>
         <artifactId>parent</artifactId>
         <groupId>com.coin</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,6 +17,11 @@
     </properties>
 
     <dependencies>
+        <!-- Production Ready features -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!--        web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -26,6 +31,27 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--        配置-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- Dubbo Spring Cloud Starter -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+        <!-- Dubbo api -->
+        <dependency>
+            <groupId>com.coin</groupId>
+            <artifactId>dubbo-api</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <!-- 引入Swagger3依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
         </dependency>
         <!--        测试-->
         <dependency>
